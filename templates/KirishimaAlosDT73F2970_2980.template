@@ -1,0 +1,49 @@
+# vim: set filetype=cfg:
+##------------------------------- ISCE/stripmapStack OPTIONS ------------------##
+isce.processor          = stripmapStack  #[stripmapStack, topsStack]
+isce.ALOS.fbd2fbs       = yes
+isce.demSNWE            = 31, 33, 130, 133  #[S, N, W, E] in degree
+isce.demFile            = ${SCRATCHDIR}/KirishimaAlosDT73F2970_2980/DEM/gsi10m.dem.wgs84
+isce.azimuthLooks       = 10
+isce.rangeLooks         = 4
+isce.maxTempBaseline    = 1800
+isce.maxPerpBaseline    = 1800
+isce.masterDate         = 20100115
+isce.unwrapMethod       = snaphu
+isce.filtStrength       = 0.5
+isce.applyWaterMask     = yes
+
+
+##------------------------------- PYSAR OPTIONS -------------------------------##
+## load_data.py -H to check more details and example inputs.
+pysar.load.processor        = isce
+##---------for ISCE only:
+pysar.load.metaFile         = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/masterShelve/data.dat
+pysar.load.baselineDir      = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/baselines
+##---------interferogram datasets:
+pysar.load.unwFile          = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/Igrams/*/filt_*.unw
+pysar.load.corFile          = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/Igrams/*/filt_*.cor
+pysar.load.connCompFile     = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/Igrams/*/filt_*.unw.conncomp
+##---------geometry datasets:
+pysar.load.demFile          = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/hgt.rdr
+pysar.load.lookupYFile      = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/lat.rdr
+pysar.load.lookupXFile      = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/lon.rdr
+pysar.load.incAngleFile     = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/los.rdr
+pysar.load.azAngleFile      = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/los.rdr
+pysar.load.shadowMaskFile   = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/shadowMask.rdr
+pysar.load.waterMaskFile    = ${KIRISHIMA_DIR}/AlosDT73F2970_2980/ISCE/geom_master/waterMask.rdr
+pysar.load.bperpFile        = None
+
+pysar.reference.lalo    	= 31.73, 131.07
+pysar.network.coherenceBased    = yes
+pysar.network.keepMinSpanTree   = no
+pysar.network.minCoherence      = 0.5
+pysar.deramp            	= quadratic
+
+
+##------------------------------- Extra Metadata -------------------------##
+ORBIT_DIRECTION = DESCENDING
+trackNumber     = 73
+first_frame     = 2970
+last_frame      = 2980
+
