@@ -1,0 +1,23 @@
+# vim: set filetype=cfg:
+##------------------------------- mintpy OPTIONS -------------------------------##
+## load_data.py -H to check more details and example inputs.
+#mintpy.subset.lalo                     = 31.88:31.94, 130.85:130.91
+mintpy.reference.lalo                   = 31.938, 130.907
+mintpy.network.coherenceBased           = yes
+mintpy.network.keepMinSpanTree          = no
+mintpy.network.minCoherence             = 0.7
+mintpy.network.endDate                  = 20110119  # magmatic events start
+
+mintpy.networkInversion.minTempCoh      = 0.8
+mintpy.troposphericDelay.weatherModel   = ERA5
+mintpy.residualRMS.cutoff               = 1
+mintpy.deramp                           = linear
+mintpy.velocity.startDate               = 20080822  # phreatic events start
+mintpy.velocity.endDate                 = 20100710  # phreatic events end, 20100710, 20091130
+
+##------------------------------- Extra Metadata -------------------------##
+ORBIT_DIRECTION = DESCENDING
+trackNumber     = 73
+first_frame     = 2970
+last_frame      = 2980
+
