@@ -1,4 +1,4 @@
-gmt
+gmt5
 numpy
 matplotlib
 mintpy
