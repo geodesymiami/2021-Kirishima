@@ -1,3 +1,10 @@
 *.DS_Store
-.ipynb_checkpoints/*
 *.png
+*.cpt
+*.grd
+*.ps
+.ipynb_checkpoints/*
+Fig_1_volcano_setting/
+data/*dem*
+
+
