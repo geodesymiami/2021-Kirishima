@@ -3,7 +3,7 @@
 isce.processor          = stripmapStack  #[stripmapStack, topsStack]
 isce.ALOS.fbd2fbs       = yes
 isce.demSNWE            = 31, 33, 130, 133  #[S, N, W, E] in degree
-isce.demFile            = ${SCRATCHDIR}/KirishimaAlosDT73F2970_2980/DEM/gsi10m.dem.wgs84
+isce.demFile            = ${SCRATCHDIR}/AlosDT73F2970_2980/DEM/gsi10m.dem.wgs84
 isce.azimuthLooks       = 10
 isce.rangeLooks         = 4
 isce.maxTempBaseline    = 1800

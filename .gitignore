@@ -4,7 +4,7 @@
 *.grd
 *.ps
 .ipynb_checkpoints/*
-Fig_1_volcano_setting/
+volcano_setting/
 data/*dem*
 
 

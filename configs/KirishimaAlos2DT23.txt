@@ -1,0 +1,21 @@
+# vim: set filetype=cfg:
+mintpy.load.processor           = isce
+mintpy.reference.lalo           = 31.930, 130.864 #31.938, 130.907
+mintpy.network.coherenceBased   = yes
+mintpy.network.keepMinSpanTree  = no
+mintpy.network.minCoherence     = 0.8
+mintpy.networkInversion.maskDataset     = coherence
+mintpy.networkInversion.maskThreshold   = 0.4
+mintpy.troposphericDelay.weatherModel   = ERA5
+mintpy.deramp                   = linear
+mintpy.residualRMS.deramp       = linear
+mintpy.residualRMS.cutoff       = 1
+mintpy.reference.date           = 20150223
+mintpy.velocity.endDate         = 20170918
+
+##------------------------------- Extra Metadata -------------------------##
+ORBIT_DIRECTION = DESCENDING
+trackNumber     = 23
+first_frame     = 2970
+last_frame      = 2970
+

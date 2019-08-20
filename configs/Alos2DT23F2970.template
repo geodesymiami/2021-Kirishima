@@ -2,7 +2,7 @@
 ##------------------------------- ISCE/stripmapStack OPTIONS ------------------##
 isce.processor          = stripmapStack  #[stripmapStack, topsStack]
 isce.demSNWE            = 31, 33, 130, 132  #[S, N, W, E] in degree
-isce.demFile            = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/DEM/gsi10m.dem.wgs84
+isce.demFile            = ${SCRATCHDIR}/Alos2DT23F2970/DEM/gsi10m.dem.wgs84
 isce.azimuthLooks       = 10
 isce.rangeLooks         = 8
 isce.maxTempBaseline    = 400
@@ -16,20 +16,20 @@ isce.applyWaterMask     = yes
 ## load_data.py -H to check more details and example inputs.
 mintpy.load.processor        = isce
 ##---------for ISCE only:
-mintpy.load.metaFile         = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/masterShelve/data.dat
-mintpy.load.baselineDir      = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/baselines
+mintpy.load.metaFile         = ${SCRATCHDIR}/Alos2DT23F2970/masterShelve/data.dat
+mintpy.load.baselineDir      = ${SCRATCHDIR}/Alos2DT23F2970/baselines
 ##---------interferogram datasets:
-mintpy.load.unwFile          = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/Igrams/*/filt_*.unw
-mintpy.load.corFile          = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/Igrams/*/filt_*.cor
-mintpy.load.connCompFile     = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/Igrams/*/filt_*.unw.conncomp
+mintpy.load.unwFile          = ${SCRATCHDIR}/Alos2DT23F2970/Igrams/*/filt_*.unw
+mintpy.load.corFile          = ${SCRATCHDIR}/Alos2DT23F2970/Igrams/*/filt_*.cor
+mintpy.load.connCompFile     = ${SCRATCHDIR}/Alos2DT23F2970/Igrams/*/filt_*.unw.conncomp
 ##---------geometry datasets:
-mintpy.load.demFile          = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/hgt.rdr
-mintpy.load.lookupYFile      = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/lat.rdr
-mintpy.load.lookupXFile      = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/lon.rdr
-mintpy.load.incAngleFile     = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/los.rdr
-mintpy.load.azAngleFile      = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/los.rdr
-mintpy.load.shadowMaskFile   = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/shadowMask.rdr
-mintpy.load.waterMaskFile    = ${SCRATCHDIR}/KirishimaAlos2DT23F2970/geom_master/waterMask.rdr
+mintpy.load.demFile          = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/hgt.rdr
+mintpy.load.lookupYFile      = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/lat.rdr
+mintpy.load.lookupXFile      = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/lon.rdr
+mintpy.load.incAngleFile     = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/los.rdr
+mintpy.load.azAngleFile      = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/los.rdr
+mintpy.load.shadowMaskFile   = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/shadowMask.rdr
+mintpy.load.waterMaskFile    = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/waterMask.rdr
 mintpy.load.bperpFile        = None
 
 #mintpy.reference.lalo    	= 31.73, 131.07
