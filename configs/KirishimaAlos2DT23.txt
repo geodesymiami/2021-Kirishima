@@ -1,6 +1,6 @@
 # vim: set filetype=cfg:
 mintpy.load.processor           = isce
-mintpy.reference.lalo           = 31.930, 130.864 #31.938, 130.907
+mintpy.reference.lalo           = 31.938, 130.907  #31.930, 130.864 [GBIS Shinmoe_2008]
 mintpy.network.coherenceBased   = yes
 mintpy.network.keepMinSpanTree  = no
 mintpy.network.minCoherence     = 0.8
