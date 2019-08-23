@@ -88,22 +88,29 @@ modelInput.mogi.upper = [  800;   600;    900;    -1e2; ];      % upper bounds o
 %                                X       Y      Z     R   DP/mu
 modelInput.mctigue.start = [   400;    300;   450;  100; -5e-4; ];  % starting model
 modelInput.mctigue.step  = [    50;     50;    10;  100;  1e-3; ];  % initial maximum step size
-modelInput.mctigue.lower = [  -200;   -400;   100;  0.1;  -1e0; ];  % lower bounds on m
+modelInput.mctigue.lower = [     0;      0;   100;  0.1;  -1e0; ];  % lower bounds on m
 modelInput.mctigue.upper = [  1000;   1000;   900;  500; -1e-8; ];  % upper bounds on m
 
+% Yang 'Y'
+%                             X       Y      Z      a     b/a    Str    Pln    DP/mu
+modelInput.yang.start = [   400;    300;   450;   300;    0.5;    1;  -89.9;  -1e-4;];    % starting model
+modelInput.yang.step =  [    50;     50;    10;    50;   0.01;    1;      1;   1e-3;];    % initial maximum step size
+modelInput.yang.lower = [  -200;   -400;   100;     1;   0.01; -100; -150.0;  -1e-0;];    % lower bounds on m
+modelInput.yang.upper = [  1000;   1000;   900;  1000;   0.99;   60;  -30.0;  -1e-8;];    % upper bounds on m
+
 % Compound Dislocation Model (Nikhoo) 'C'
-%                            X     Y      Z     omegaX  omegaY  omegaZ   ax      ay      az     opening
+%                            X      Y      Z    omegaX  omegaY  omegaZ   ax      ay      az     opening
 modelInput.cdmn.start = [   400;   300;   450;     0;      0;     20;    50;     50;     50;     -0.1;];  % starting model
 modelInput.cdmn.step  = [    50;    50;    10;     1;      1;      1;    10;     10;     10;     0.01;];  % initial maximium step size
 modelInput.cdmn.lower = [  -200;  -400;   100;   -60;    -60;      0;   0.1;    0.1;    0.1;    -10.0;];  % lower bounds on m
 modelInput.cdmn.upper = [  1000;  1000;   900;    30;     30;    180;  1000;   1000;   1000;    -1e-5;];  % upper bounds on m
 
-% Yang 'Y'
-%                             X       Y      Z      a     a/b    Str    Pln    DP/mu
-modelInput.yang.start = [   400;    300;   450;   300;    0.5;    1;  -89.9;  -1e-4;];    % starting model
-modelInput.yang.step =  [    50;     50;    10;    50;   0.01;    1;      1;   1e-3;];    % initial maximum step size
-modelInput.yang.lower = [  -200;   -400;   100;     1;   0.01; -100; -150.0;  -1e-0;];    % lower bounds on m
-modelInput.yang.upper = [  1000;   1000;   900;  1000;   0.99;   60;  -30.0;  -1e-8;];    % upper bounds on m
+% Point Compound Dislocation Model (Nikhoo) 'N'
+%                            X     Y      Z     omegaX  omegaY omegaZ  DVx     DVy      DVz
+modelInput.pcdm.start = [   400;   300;   450;     0;     0;     20;  -500;   -500;   -500;];  % starting model
+modelInput.pcdm.step  = [    50;    50;    10;     1;     1;      1;    10;     10;     10;];  % initial maximium step size
+modelInput.pcdm.lower = [  -200;  -400;   100;   -90;   -45;      0;  -1e6;   -1e6;   -1e6;];  % lower bounds on m
+modelInput.pcdm.upper = [  1000;  1000;   900;     0;    45;     90;  -0.1;   -0.1;   -0.1;];  % upper bounds on m
 
 % Penny-shaped crack 'P'
 %                              X       Y      Z     R    DP/mu
@@ -111,39 +118,3 @@ modelInput.penny.start = [   400;    300;   450;  100;  -5e-4; ];    % starting 
 modelInput.penny.step =  [    50;     50;    10;  100;   1e-3; ];    % initial maximum step size
 modelInput.penny.lower = [  -200;   -400;   100;   10;  -1e-1; ];    % lower bounds on m
 modelInput.penny.upper = [  1000;   1000;   900;  500;  -1e-8; ];    % upper bounds on m
-
-% Point Compound Dislocation Model (Nikhoo) 'N'
-%                            X     Y      Z     omegaX  omegaY omegaZ  DVx     DVy      DVz
-modelInput.pcdm.start = [     0;     0;  4000;    45;    45;     45;   500;    500;    500;];  % starting model
-modelInput.pcdm.step  = [   100;   100;    10;     1;     1;      1;    10;     10;     10;];  % initial maximium step size
-modelInput.pcdm.lower = [-20000;-20000;  2000;     0;     0;      0;   0.1;    0.1;    0.1;];  % lower bounds on m
-modelInput.pcdm.upper = [ 20000; 20000; 10000;    90;    90;    180;  1000;   1000;   1000;];  % upper bounds on m
-
-% Rectangular dipping dike (Okada) 'D'
-%                            L       W      Z     Dip    Str      X       Y     Op
-modelInput.dike.start = [ 7000;   5000;   500;  -75.0;   270;  10000;  -3000;  1.0];    % starting model
-modelInput.dike.step =  [  100;    100;   100;     10;    10;    100;    100; 0.10];    % initial maximum step size
-modelInput.dike.lower = [  100;    100;   100;  -89.9;   180;   3000;  -9000;  0.1];    % lower bounds on m
-modelInput.dike.upper = [15000;  10000; 10000;   -0.1;   360;  15000;   3000; 10.0];    % upper bounds on m
-
-% Rectangular fault (Okada) 'F'
-%                            L       W      Z     Dip     Str      X       Y      SS       DS
-modelInput.fault.start = [ 5000;   2000;   500;  -75.0;   270;  10000;  -3000;   1.0;     1.0];    % starting model
-modelInput.fault.step =  [   50;     50;   500;      1;     1;    100;    100;  0.01;    0.01];    % initial maximum step size
-modelInput.fault.lower = [  100;    100;   100;  -89.9;   180;   3000;  -7000; -10.0;   -10.0];    % lower bounds on m
-modelInput.fault.upper = [10000;  10000; 10000;   -0.1;   360;  15000;      0;  10.0;    10.0];    % upper bounds on m
-
-
-% Horizontal rectangular sill (Okada) 'S'
-%                            L     W      Z   Str     X      Y    Op
-modelInput.sill.start = [ 2000; 2000;  1100;  180;-2000;  2000;   -1.0;]; % starting model
-modelInput.sill.step  = [   50;   50;    50;    1;  100;   100;    0.01];  % initial maximum step size
-modelInput.sill.lower = [  300;  300;   100;    1;-20000; -20000;  -50];  % lower bounds on m
-modelInput.sill.upper = [10000;10000; 10000;  359; 20000;  20000; -0.01];  % upper bounds on m
-
-% Hinged double dike (custum made) 'H'
-%                           X_1     Y_1     L_1     W_1     Z_1    Dip_1     Op_1    W_2   Dip_2  Op_2  Strike
-modelInput.hing.start = [   100;    100;   1000;   1000;     10;   -85.0;    0.5;  1000;   -10.0;  0.5;    30]; % starting model
-modelInput.hing.step =  [   100;    100;    100;    100;    100;       1;   0.01;   100;       1; 0.01;     1]; % initial maximum step size
-modelInput.hing.lower = [  -200;   -200;    100;    100;      1;   -89.9;   0.01;   100;   -89.9; 0.01;     1]; % lower bounds on m
-modelInput.hing.upper = [   200;    200;   7000;   7000;    200;    -0.1;   10.0;  9000;   -0.01; 10.0;   359]; % upper bounds on m
