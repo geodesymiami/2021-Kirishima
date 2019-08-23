@@ -14,4 +14,5 @@
 
 ### Geodetic Modeling with GBIS (Area of Interest) ###
 
-+ Shinmoe_2008.inp
++ ShinmoePost2008.inp
++ ShinmoePre2017.inp
