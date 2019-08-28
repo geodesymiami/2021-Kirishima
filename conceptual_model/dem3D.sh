@@ -3,7 +3,7 @@
 
 gmt set FONT_LABEL 12p
 gmt set FONT_ANNOT_PRIMARY 12p
-gmt set FORMAT_GEO_MAP ddd.xF
+gmt set FORMAT_GEO_MAP ddd.xxF
 gmt set MAP_FRAME_TYPE plain
 
 FILE='dem_msk.grd'
@@ -11,21 +11,14 @@ OUTFILE='dem3D.ps'
 
 
 ################### DEM ###################
-#gmt makecpt -Cgray -T-3000/3000/1 -V > topo.cpt
-#gmt makecpt -Cwiki-2.0 -T-1000/1900/1 -V > topo.cpt
+#gmt makecpt -Cwiki-2.0 -T-0.7/1.8/0.01 -N -V > topo.cpt
 #gmt grdgradient $FILE -Nt -A0 -fg -Gtopo_i.nc
 
-#gmt grdview $FILE -JM5i -JZ0.5i -p210/20 -R130.8/130.91/31.86/32.0 -BWesN -B0.1 -Ctopo.cpt -Itopo_i.nc -Qi300 -V > $OUTFILE
-gmt grdview $FILE -JM5i -JZ0.5i -p210/20 -R130.8/130.91/31.86/32.0 -Ctopo.cpt -Itopo_i.nc -Qi600 -V > $OUTFILE
+gmt grdview $FILE -JM4i -JZ5i -p210/20+w130.8620/31.9389 -N-11 -Qi600 -BWeSnZ \
+    -B0.03 -Bz1 -R130.8/130.92/31.89/32.0 -Ctopo.cpt -Itopo_i.nc -V -K > $OUTFILE
 
-
-#################### Profile location of Fig. 7 - Conceptual model #######
-#gmt psxy <<END -R -J -W1,royalblue -V -O -K >> $OUTFILE
-#130.8130    31.9290
-#130.8535    31.9480
-#130.9000    31.8900
-#END
-
+################### Sea level #######
+gmt psxyz profile_sea_level.xyz -W1,black -R -J -p -V -O >> $OUTFILE
 
 #################### Active Volcanoes ###################
 #gmt psxy <<END -R -J -St0.3 -W1.5,black -V -O >> $OUTFILE

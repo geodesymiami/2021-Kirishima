@@ -15,9 +15,11 @@ OUTFILE='dem.ps'
 gmt makecpt -Cwiki-2.0 -T-1000/1900/1 -V > topo.cpt
 gmt grdgradient $FILE -Nt -A0 -fg -Gtopo_i.nc
 
-gmt grdimage $FILE -R130.71/131.0/31.84/32.06 -JM6i -BWesN -B0.1 -Ctopo.cpt -Itopo_i.nc -P -V -K > $OUTFILE
-gmt pscoast -R -J -LjBL+c31.9+o0.3i/1.6i+w5k+l+f -W -V -O -K >> $OUTFILE            #scale-bar
-gmt psscale -R -J -DjBL+w1.1i/0.15i+h+o0.3i/1.2i -Ctopo.cpt -By1+lm -Bx1000+lElevation -G0/1800 -V -O -K >> $OUTFILE    #color-map
+gmt grdimage $FILE -R130.71/131.0/31.84/32.06 -JM6i -BWesN -B0.1 \
+    -Ctopo.cpt -Itopo_i.nc -P -V -K > $OUTFILE
+gmt pscoast -R -J -LjBL+c31.9+o0.3i/1.6i+w5k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
+gmt psscale -R -J -DjBL+w1.1i/0.15i+h+o0.3i/1.2i -Ctopo.cpt -By1+lm \
+    -Bx1000+lElevation -G0/1800 -V -O -K >> $OUTFILE                            #color-map
 
 
 ################### Bounding box of Fig. 2 - Shinmoe ALOS-1 ##############
