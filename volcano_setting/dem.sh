@@ -6,7 +6,7 @@ gmt set FONT_ANNOT_PRIMARY 12p
 gmt set FORMAT_GEO_MAP ddd.xF
 gmt set MAP_FRAME_TYPE plain
 
-FILE='dem.grd'
+FILE='./../data/dem.grd'
 OUTFILE='dem.ps'
 
 
@@ -20,7 +20,7 @@ gmt pscoast -R -J -LjBL+c31.9+o0.3i/1.6i+w5k+l+f -W -V -O -K >> $OUTFILE        
 gmt psscale -R -J -DjBL+w1.1i/0.15i+h+o0.3i/1.2i -Ctopo.cpt -By1+lm -Bx1000+lElevation -G0/1800 -V -O -K >> $OUTFILE    #color-map
 
 
-################### Shinmoe-dake AOI (Fig. 2-3) ##############
+################### Bounding box of Fig. 2 - Shinmoe ALOS-1 ##############
 LON0=130.855
 LON1=130.91
 LAT0=31.885
@@ -32,6 +32,28 @@ $LON1   $LAT1
 $LON1   $LAT0
 $LON0   $LAT0
 $LON0   $LAT1
+END
+
+################### Bounding box of Fig. 3 - Kirishima ALOS-2 ############
+LON0=130.848
+LON1=130.91
+LAT0=31.893
+LAT1=31.958
+
+gmt psxy <<END -R -J -W0.5,black,dashed -V -O -K >> $OUTFILE
+$LON0   $LAT1
+$LON1   $LAT1
+$LON1   $LAT0
+$LON0   $LAT0
+$LON0   $LAT1
+END
+
+
+################### Profile location of Fig. 7 - Conceptual model #######
+gmt psxy <<END -R -J -W1,royalblue -V -O -K >> $OUTFILE
+130.8130    31.9290
+130.8535    31.9480
+130.9000    31.8900
 END
 
 
