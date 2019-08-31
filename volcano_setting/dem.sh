@@ -53,9 +53,9 @@ END
 
 ################### Profile location of Fig. 7 - Conceptual model #######
 gmt psxy <<END -R -J -W1,royalblue -V -O -K >> $OUTFILE
-130.8130    31.9290
-130.8535    31.9480
-130.9000    31.8900
+130.8000    31.9460
+130.8524    31.9460
+130.9021    31.8900
 END
 
 

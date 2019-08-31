@@ -14,8 +14,9 @@ OUTFILE='dem3D.ps'
 #gmt makecpt -Cwiki-2.0 -T-0.7/1.8/0.01 -N -V > topo.cpt
 #gmt grdgradient $FILE -Nt -A0 -fg -Gtopo_i.nc
 
-gmt grdview $FILE -JM4i -JZ5i -p210/20+w130.8620/31.9389 -N-11 -Qi600 -BWeSnZ \
-    -B0.03 -Bz1 -R130.8/130.92/31.89/32.0 -Ctopo.cpt -Itopo_i.nc -V -K > $OUTFILE
+gmt grdview $FILE -JM4i -JZ5i -p210/20+w130.8620/31.9389 -N-11 \
+    -Qi600 -BWeSnZ -B0.03 -Bz1 -R130.8/130.92/31.89/32.0 -Ctopo.cpt -Itopo_i.nc \
+    -V -K > $OUTFILE
 
 ################### Sea level #######
 gmt psxyz profile_sea_level.xyz -W1,black -R -J -p -V -O >> $OUTFILE
