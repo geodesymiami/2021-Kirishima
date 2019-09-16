@@ -1,4 +1,4 @@
-## Configuration files for InSAR processing and geodetic modeling
+## Configuration files for InSAR processing
 
 ### 1. InSAR Stack Processing with ISCE/stripmapStack (the whole track) ###
 
@@ -13,9 +13,3 @@ Run `load_data_aoi_*.sh` to prepare **mintpy/inputs**.
 + ShinmoeAlosAT424.txt
 + ShinmoeAlosDT73.txt
 + KirishimaAlos2T23.txt
-
-### 3. Geodetic Modeling with GBIS (Area of Interest) ###
-
-+ Shinmoe2008post.inp
-+ Shinmoe2017pre.inp
-+ Iwo2017pre.inp
