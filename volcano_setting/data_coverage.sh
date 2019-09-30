@@ -10,7 +10,7 @@ OUTFILE='data_coverage.ps'
 
 
 ##------------------------ Background -------------------------##
-gmt pscoast -R129.65/131.8/30.9/33.9 -JM1.6i -Dh -B1wens -Na -Swhite -Gdimgray -P -V -K > $OUTFILE
+gmt pscoast -R129.65/131.8/30.9/33.9 -JM1.6i -Di -A100/1 -B1wens -Na -Wthinner -P -V -K > $OUTFILE
 #gmt pscoast -R129.5/131.9/30.9/33.9 -JM1.8i -Dh -B1wens -Na -Swhite -Gdimgray -P -V -K > $OUTFILE
 #gmt pscoast -R129.9/131.7/31/32.8 -JM2i -Dh -B1wens -Na -Swhite -Ggray60 -P -V -K > $OUTFILE
 #gmt pscoast -R129.9/131.7/31/32.8 -JM2.5i -Dh -B1wens -Na -Swhite -Ggray55 -P -V -K > $OUTFILE

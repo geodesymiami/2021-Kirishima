@@ -5,8 +5,8 @@
 *.png
 *.ps
 .ipynb_checkpoints/*
+GBIS/
 conceptual_model/
-volcano_setting/
 data/*dem*
-models/
+volcano_setting/
 
