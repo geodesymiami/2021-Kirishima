@@ -1,12 +1,12 @@
 *.DS_Store
-*.png
 *.cpt
 *.grd
+*.h5
+*.png
 *.ps
 .ipynb_checkpoints/*
 conceptual_model/
 volcano_setting/
 data/*dem*
+models/
 
-
-*.h5
