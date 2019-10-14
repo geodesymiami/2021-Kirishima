@@ -4,7 +4,7 @@ mintpy.reference.lalo                   = 31.916, 130.850  #31.895, 130.90  #31.
 mintpy.network.coherenceBased           = yes
 mintpy.network.keepMinSpanTree          = no
 mintpy.network.minCoherence             = 0.8
-mintpy.network.endDate                  = 20171011
+mintpy.network.endDate                  = no #20171011
 
 mintpy.networkInversion.minTempCoh      = 0.8
 mintpy.networkInversion.shadowMask      = no
@@ -12,7 +12,7 @@ mintpy.troposphericDelay.weatherModel   = ERA5
 mintpy.residualRMS.cutoff               = 2
 mintpy.deramp                           = linear
 mintpy.velocity.startDate               = 20150101  #to ensure similar time spanning between asc/desc displacement from velocity
-mintpy.velocity.endDate                 = 20171011  #start date of the 2017 eruption
+mintpy.velocity.endDate                 = no #20171011  #start date of the 2017 eruption
 
 ##------------------------------- Extra Metadata -------------------------##
 ORBIT_DIRECTION = ASCENDING
