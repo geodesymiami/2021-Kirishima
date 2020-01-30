@@ -21,8 +21,8 @@ gmt grdimage $FILE -R130.72/130.99/31.84/32.06 -JM5i -BwEsN -B0.1 \
 gmt pscoast -R -J -LjBL+c31.9+o0.3i/1.6i+w5k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
 
 gmt set MAP_FRAME_TYPE plain
-gmt psscale -R -J -DjBL+w1.0i/0.15i+h+o0.3i/1.2i -Ctopo.cpt -By1+lm \
-    -Bx1000+lElevation -G0/1800 -V -O -K >> $OUTFILE                            #color-map
+gmt psscale -R -J -DjBL+w1.0i/0.15i+h+o0.3i/0.9i -Ctopo.cpt -By1+lm \
+    -Bx1000 -G0/1800 -V -O -K >> $OUTFILE                            #color-map
 
 
 ################### Bounding box of Fig. 2 - ALOS-1/2 observations ##############
@@ -48,15 +48,15 @@ END
 
 
 ################### Active Volcanoes ###################
-gmt psxy <<END -R -J -St0.3 -W1.5,black -V -O -K >> $OUTFILE
-130.910     31.886      #Ohachi
-130.883     31.9114     #Shinmoe-dake
-130.853     31.947      #Iwo-yama
-END
+#gmt psxy <<END -R -J -St0.3 -W1.5,black -V -O -K >> $OUTFILE
+#130.910     31.886      #Ohachi
+#130.883     31.9114     #Shinmoe-dake
+#130.853     31.947      #Iwo-yama
+#END
 
 
 ################### Magma Source ###################
-gmt psxy <<END -R -J -Sc1 -W6,black,3:2p -V -O -K >> $OUTFILE
+gmt psxy <<END -R -J -Sc1 -W5,black,3:2p -V -O -K >> $OUTFILE
 130.831     31.942
 END
 

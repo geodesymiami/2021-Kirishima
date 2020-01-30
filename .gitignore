@@ -8,5 +8,8 @@
 GBIS/
 conceptual_model/
 data/*dem*
-volcano_setting/
-
+geo_setting/tutorial/
+*.tif
+*.history
+*.conf
+*.nc
