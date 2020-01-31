@@ -14,7 +14,7 @@ OUTFILE='loc_japan.ps'
 #gmt pscoast -R127/146/29/47 -JM1.8i -Ba -Dh -A500 -Gdimgray -Swhite -P -V -K > $OUTFILE
 #gmt pscoast -R128.5/145.5/29/47 -JM1.5i -Ba -Dl -A200 -Wthinner -A500 -P -V -K > $OUTFILE
 #gmt pscoast -R123/151/26/50 -JM1.5i -Ba -Dh -A500 -Gdimgray -P -V -K > $OUTFILE
-gmt pscoast -R123/151/26/50 -JM1.5i -Ba -EJP+gdimgray -P -V -K > $OUTFILE
+gmt pscoast -R123/151/26/50 -JM1.5i -Ba -EJP+g135/135/135 -P -V -K > $OUTFILE
 
 ################## AOI ################################
 LON0=129.65
@@ -29,7 +29,7 @@ LAT1=33.9
 #$LON0   $LAT1
 #END
 
-gmt psxy <<END -R -J -Sc0.35 -Wthicker,red -V -O >> $OUTFILE
+gmt psxy <<END -R -J -Sc0.33 -Wthin,red -V -O >> $OUTFILE
 131.1     31.5     #Shinmoe-dake
 END
 

@@ -13,17 +13,17 @@ OUTFILE='dem.ps'
 
 ################### DEM ###################
 #gmt makecpt -Cgray -T-3000/3000/1 -V > topo.cpt
-gmt makecpt -Cwiki-2.0 -T-0.650/1.900/0.01 -V > topo.cpt
+gmt makecpt -Cwiki-2.0 -T-0.650/1.850/0.01 -V > topo.cpt
 gmt grdgradient $FILE -Nt -A0 -fg -Gtopo_i.nc
 
 #gmt grdimage $FILE -R130.72/130.99/31.84/32.06 -JM5i -BwEsN -B0.1 \
-gmt grdimage $FILE -R130.78/130.95/31.86/31.98 -JM5i -BwEsN -B0.1 \
+gmt grdimage $FILE -R130.78/130.95/31.87/31.98 -JM5i -BwEsN -B0.1 \
     -Ctopo.cpt -Itopo_i.nc -P -V -K > $OUTFILE
-gmt pscoast -R -J -LjBR+c31.9+o0.2i/0.3i+w3k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
+gmt pscoast -R -J -LjBR+c31.9+o1.8i/0.3i+w3k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
 
 gmt set MAP_FRAME_TYPE plain
 gmt psscale -R -J -DjTR+w1.0i/0.1i+v+o0.5i/0.3i -Ctopo.cpt -By1+lkm \
-    -Bx0.5 -G0.3/1.9 -V -O -K >> $OUTFILE                                      #color-map
+    -Bx0.5 -G0.3/1.85 -V -O -K >> $OUTFILE                                      #color-map
 
 
 ################### Bounding box of Fig. 2 - ALOS-1/2 observations ##############
