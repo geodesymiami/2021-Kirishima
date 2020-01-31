@@ -1,5 +1,5 @@
 #!/bin/sh
-# GMT, version 5.4.4
+# GMT, version 5.4
 
 gmt set FONT_LABEL 12p
 gmt set FONT_ANNOT_PRIMARY 12p
@@ -29,9 +29,9 @@ LAT1=33.9
 #$LON0   $LAT1
 #END
 
-gmt psxy <<END -R -J -Sc0.4 -Wthicker,red -V -O >> $OUTFILE
+gmt psxy <<END -R -J -Sc0.35 -Wthicker,red -V -O >> $OUTFILE
 131.1     31.5     #Shinmoe-dake
 END
 
 ################### Convert to TIFF ###################
-gmt psconvert -A -E1500 -TG $OUTFILE
+gmt psconvert -A -E600 -Tf $OUTFILE
