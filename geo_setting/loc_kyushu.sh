@@ -10,14 +10,15 @@ gmt set MAP_FRAME_PEN thick,black
 OUTFILE='loc_kyushu.ps'
 
 #gmt pscoast -R129.65/131.8/30.9/33.9 -JM1.5i -Ba -EJP+gdimgray -P -V -K > $OUTFILE
-gmt pscoast -R129.0/132.5/30.5/34.5 -JM1.5i -Ba -EJP+g135/135/135 -P -V -K > $OUTFILE
+#gmt pscoast -R129.0/132.5/30.5/34.5 -JM1.5i -Ba -EJP+g135/135/135 -P -V -K > $OUTFILE
+gmt pscoast -R129.0/132.5/30.5/34.5 -JM1.5i -Ba -Dh -A10  -Na -W -Gwhite -Slightgray -P -V -K > $OUTFILE
 
 ################## AOI ################################
 LON0=130.78
 LON1=130.95
 LAT0=31.87
 LAT1=31.98
-gmt psxy <<END -R -J -Wthinner,red -V -O -K >> $OUTFILE
+gmt psxy <<END -R -J -Wthin,black -V -O -K >> $OUTFILE
 $LON0   $LAT1
 $LON1   $LAT1
 $LON1   $LAT0

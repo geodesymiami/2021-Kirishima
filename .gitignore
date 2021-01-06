@@ -5,7 +5,7 @@
 *.png
 *.ps
 .ipynb_checkpoints/*
-GBIS/
+model/
 conceptual_model/
 data/*dem*
 geo_setting/tutorial/
