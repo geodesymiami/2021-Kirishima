@@ -18,14 +18,14 @@
 
 %% Reference point and Area of interest
 geo.referencePoint = [130.88; 31.91];    % Longitude and Latitude in degrees for arbitrary reference point of local coordinates system [Lon; Lat;]
-geo.boundingBox = [130.85; 31.94; 130.91; 31.88;];  % Coordinates in degrees of upper left and lower right limits of area of interest [UL_Lon,UL_Lat,LR_Lon,LR_Lat] [W; N; E; S]
+geo.boundingBox = [130.85; 31.94; 130.91; 31.88];  % Coordinates in degrees of upper left and lower right limits of area of interest [UL_Lon,UL_Lat,LR_Lon,LR_Lat] [W; N; E; S]
 
 %% InSAR data
 % Make sure insarID is unique!
 
-insarID = 1;                            % InSAR dataset unique identifier
+insarID = 1;                            % InSAR dataset unique identifier - ALOS1 asc track
 
-insar{insarID}.dataPath = '/Users/yunjunz/insarlab/Kirishima/Model/data/KirishimaAlos2DT23_20150209_20170918.mat'; % Path to data file
+insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlos2AT131_20150106_20171010.mat'; % Path to data file
 
 insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
 
@@ -33,59 +33,76 @@ insar{insarID}.constOffset = 'y';       % Remove constant offset? 'y' or 'n'
 
 insar{insarID}.rampFlag = 'n';          % Remove ramp? 'y' or 'n'
 
-insar{insarID}.sillExp = 5.7e-05;       % Variogram sill in m^2
+insar{insarID}.sillExp = 5.0e-05;       % Variogram sill in m^2
 
-insar{insarID}.range = 750;             % Variogram range in m
+insar{insarID}.range = 1460;             % Variogram range in m
 
-insar{insarID}.nugget = 5.6e-06;          % Variogram nugget in m
+insar{insarID}.nugget = 6.8e-06;          % Variogram nugget in m
 
-insar{insarID}.quadtreeThresh = 0.0055^2;  % Quadtree threshold variance (e.g., 0.01^2 m or 1e-04 m)
+insar{insarID}.quadtreeThresh = 0.0035^2;  % Quadtree threshold variance (e.g., 0.01^2 m or 1e-04 m)
 
-insar{insarID}.quadtreeBox = [130.870; 31.930; 130.910; 31.900;];  % WNES coordinates in degrees for area of interest
+insar{insarID}.quadtreeEndLevel = 7;  % Quadtree end of subdivisions, default is 1000
 
-insar{insarID}.gridStep = 1000;          % grid step in m
+insar{insarID}.quadtreeMinPixelNumber = 15 % Minimum number of pixels for each subdivision, below which will excluded. Set to 1 to keep everything.
 
+insar{insarID}.quadtreeBox = [130.865; 31.925; 130.90; 31.90];  % WNES coordinates in degrees for area of interest
 
-%% GPS data
+insar{insarID}.gridStep = 1500;          % grid step in m
 
-%gps.dataPath = '/Users/yunjunz/development/matlab/GBIS_V1.1/Example/Data/GPS_data.txt';   % Path to GPS data file
-%gps.weight = 1/1;    % Weight of GPS data vs. InSAR data in inversion (e.g., 10/1)
+%%
+
+insarID = 2;                            % InSAR dataset unique identifier - ALOS1 desc track
+
+insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlos2DT23_20150209_20170918.mat'; % Path to data file
+
+insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
+
+insar{insarID}.constOffset = 'y';       % Remove constant offset? 'y' or 'n'
+
+insar{insarID}.rampFlag = 'n';          % Remove ramp? 'y' or 'n'
+
+insar{insarID}.sillExp = 4.4e-05;       % Variogram sill in m^2
+
+insar{insarID}.range = 940;             % Variogram range in m
+
+insar{insarID}.nugget = 7.3e-06;          % Variogram nugget in m
+
+insar{insarID}.quadtreeThresh = 0.0035^2;  % Quadtree threshold variance (e.g., 0.01^2 m or 1e-04 m)
+
+insar{insarID}.quadtreeEndLevel = 7;  % Quadtree end of subdivisions, default is 1000
+
+insar{insarID}.quadtreeMinPixelNumber = 15 % Minimum number of pixels for each subdivision, below which will excluded. Set to 1 to keep everything.
+
+insar{insarID}.quadtreeBox = [130.865; 31.925; 130.90; 31.90];  % WNES coordinates in degrees for area of interest
+
+insar{insarID}.gridStep = 1500;          % grid step in m
+
 
 %% Model parameters
 
 modelInput.nu = 0.25;     % Poisson's ratio (Shear modulus is set to 1)
 
-% Mogi 'M'
-%                             X       Y      Z      DV
-modelInput.mogi.start = [   700;    600;    500;   1e5; ];      % starting model
-modelInput.mogi.step =  [   100;    100;    100;   1e4; ];      % initial maximum step size
-modelInput.mogi.lower = [     0;      0;      0;   1e-3;];      % lower bounds on m
-modelInput.mogi.upper = [  1000;   1000;   2000;   1e7; ];      % upper bounds on m
+% Topographic Effect correction using varying depth method (Williams & Wadge, 1998, GRL)
+modelInput.topo = 'y';						% 'y' or 'n'. Apply topographic correction using varying depth method.
+modelInput.freeSurfaceHeight = 1100;		% Minimum height of observations in m a.s.l.; observations below the threshold will be fixed to this height.
+
+
+% Compound Dislocation Model (Nikhoo) 'C'
+% Fix omegaX/Y/Z by setting the start/lower/upper to the same value, e.g. 0
+% Fix aY/aX to 1 for a oblate/prolate spheroid
+%                             X       Y      Z    omegaX  omegaY  omegaZ    aX     aY/aX   aZ/aX    opening
+modelInput.cdmn.start = [   200;    100;   -700;     0;      0;      0;    300;      1;      1;      0.5;];  % starting model
+modelInput.cdmn.step  = [   100;    100;    100;   0.1;    0.1;    0.1;     50;   0.01;   0.01;      0.1;];  % initial maximium step size
+modelInput.cdmn.lower = [  -100;   -100;  -1100;     0;      0;      0;    200;      1;      1;     1e-3;];  % lower bounds on m
+modelInput.cdmn.upper = [   500;    500;   -200;     0;      0;      0;    400;      1;      1;      1.0;];  % upper bounds on m
+
+
+
+
 
 % McTigue 'T'
 %                                X       Y      Z     R   DP/mu
-modelInput.mctigue.start = [   700;    600;   500;  100;  4e-2; ];  % starting model
-modelInput.mctigue.step =  [   100;    100;   100;   10;  1e-1; ];  % initial maximum step size
-modelInput.mctigue.lower = [     0;      0;     0;   10;  1e-4; ];  % lower bounds on m
-modelInput.mctigue.upper = [  1000;   1000;  2000; 1000;   1e0; ];  % upper bounds on m
-
-% Yang 'Y'
-%                             X       Y      Z      a     a/b  Str    Pln    DP/mu
-modelInput.yang.start = [   700;    600;  1000;   300;    0.5;   0; -89.9;   1e-2;];    % starting model
-modelInput.yang.step =  [   100;    100;    50;    50;    .01;   1;     1;   1e-1;];    % initial maximum step size
-modelInput.yang.lower = [     0;      0;   100;     1;   0.01; -20;  -105;   1e-4;];    % lower bounds on m
-modelInput.yang.upper = [  1000;   1000;  1500;  2000;   0.99;  10;   -88;    1e0;];    % upper bounds on m
-
-% Compound Dislocation Model (Nikhoo) 'C'
-%                             X       Y      Z    omegaX  omegaY  omegaZ   ax      ay      az     opening
-modelInput.cdmn.start = [   700;    600;   1000;     0;      0;    -20;   200;    200;    100;      0.1;];  % starting model
-modelInput.cdmn.step  = [    50;     50;    100;     1;      1;      1;    10;     10;     10;      0.1;];  % initial maximium step size
-modelInput.cdmn.lower = [     0;      0;    100;     0;    -20;    -60;   100;    100;     10;     1e-3;];  % lower bounds on m
-modelInput.cdmn.upper = [  1000;   1000;   1500;    30;     10;      0;  2000;   2000;   2000;      1e1;];  % upper bounds on m
-
-% Penny-shaped crack 'P'
-%                              X       Y      Z     R    DP/mu
-modelInput.penny.start = [   500;    500;   500;  100;   1e-2; ];    % starting model
-modelInput.penny.step =  [   100;    100;    50;  100;    1e1; ];    % initial maximum step size
-modelInput.penny.lower = [  -500;   -500;     0;    1;   1e-5; ];    % lower bounds on m
-modelInput.penny.upper = [  1500;   1500;  2000; 2000;    1e2; ];    % upper bounds on m
+modelInput.mctigue.start = [   200;    100;  -700;  100;  4e-2; ];  % starting model
+modelInput.mctigue.step =  [   100;    100;   100;  100;  1e-1; ];  % initial maximum step size
+modelInput.mctigue.lower = [  -100;   -100; -1100;   10;  1e-4; ];  % lower bounds on m
+modelInput.mctigue.upper = [   500;    500;  -200;  500;   1e0; ];  % upper bounds on m
