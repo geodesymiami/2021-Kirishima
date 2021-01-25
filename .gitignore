@@ -7,7 +7,7 @@
 .ipynb_checkpoints/*
 model/
 conceptual_model/
-data/*dem*
+data/
 geo_setting/tutorial/
 *.tif
 *.history
