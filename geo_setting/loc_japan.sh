@@ -29,6 +29,7 @@ LAT1=33.9
 #$LON0   $LAT1
 #END
 
+#gmt psxy <<END -R -J -Sc0.33 -Wthin,black,2:2p -V -O >> $OUTFILE
 gmt psxy <<END -R -J -Sc0.33 -Wthin,red -V -O >> $OUTFILE
 131.1     31.5     #Shinmoe-dake
 END

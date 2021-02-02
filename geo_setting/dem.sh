@@ -7,7 +7,7 @@ gmt set FORMAT_GEO_MAP ddd.xF
 gmt set MAP_FRAME_TYPE inside
 gmt set MAP_FRAME_PEN thick,black
 
-FILE='./../data/dem_km.grd'
+FILE='dem_km.grd'
 OUTFILE='dem.ps'
 
 
