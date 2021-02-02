@@ -97,12 +97,33 @@ modelInput.cdmn.lower = [  -100;   -100;  -1100;     0;      0;      0;    200; 
 modelInput.cdmn.upper = [   500;    500;   -200;     0;      0;      0;    400;      1;      1;      1.0;];  % upper bounds on m
 
 
-
-
-
 % McTigue 'T'
 %                                X       Y      Z     R   DP/mu
 modelInput.mctigue.start = [   200;    100;  -700;  100;  4e-2; ];  % starting model
 modelInput.mctigue.step =  [   100;    100;   100;  100;  1e-1; ];  % initial maximum step size
 modelInput.mctigue.lower = [  -100;   -100; -1100;   10;  1e-4; ];  % lower bounds on m
 modelInput.mctigue.upper = [   500;    500;  -200;  500;   1e0; ];  % upper bounds on m
+
+
+
+
+% Mogi 'M'
+%                             X       Y      Z      DV
+modelInput.mogi.start = [   100;    100;    900;   1e5; ];      % starting model
+modelInput.mogi.step =  [   100;    100;    100;   1e4; ];      % initial maximum step size
+modelInput.mogi.lower = [  -500;   -300;      0;   1e-3;];      % lower bounds on m
+modelInput.mogi.upper = [  1000;    500;   2000;   1e7; ];      % upper bounds on m
+
+% Yang 'Y'
+%                             X       Y      Z      a     a/b  Str    Pln    DP/mu
+modelInput.yang.start = [   700;    600;  1000;   300;    0.5;   0; -89.9;   1e-2;];    % starting model
+modelInput.yang.step =  [   100;    100;    50;    50;    .01;   1;     1;   1e-1;];    % initial maximum step size
+modelInput.yang.lower = [     0;      0;   100;     1;   0.01; -20;  -105;   1e-4;];    % lower bounds on m
+modelInput.yang.upper = [  1000;   1000;  1500;  2000;   0.99;  10;   -88;    1e0;];    % upper bounds on m
+
+% Penny-shaped crack 'P'
+%                              X       Y      Z     R    DP/mu
+modelInput.penny.start = [   500;    500;   500;  100;   1e-2; ];    % starting model
+modelInput.penny.step =  [   100;    100;    50;  100;    1e1; ];    % initial maximum step size
+modelInput.penny.lower = [  -500;   -500;     0;    1;   1e-5; ];    % lower bounds on m
+modelInput.penny.upper = [  1500;   1500;  2000; 2000;    1e2; ];    % upper bounds on m

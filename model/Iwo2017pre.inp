@@ -89,11 +89,11 @@ modelInput.freeSurfaceHeight = 1300;		% Minimum height of observations in m a.s.
 
 
 % Compound Dislocation Model (Nikhoo) 'C'
-%                             X       Y      Z    omegaX  omegaY  omegaZ   ax      ay      az     opening
-modelInput.cdmn.start = [     0;      0;  -1120;    10;    -10;      0;    50;     50;     50;      0.3;];  % starting model
-modelInput.cdmn.step  = [    10;     10;     10;     1;      1;      1;    10;     10;     10;      0.1;];  % initial maximium step size
-modelInput.cdmn.lower = [  -100;   -100;  -1220;     0;    -20;      0;    10;     10;     10;     1e-3;];  % lower bounds on m
-modelInput.cdmn.upper = [   100;    100;  -1020;    20;      0;      0;   100;    150;     80;      1e0;];  % upper bounds on m
+%                             X       Y      Z    omegaX  omegaY  omegaZ    aX     aY/aX   aZ/aX    opening
+modelInput.cdmn.start = [     0;      0;  -1120;    10;    -10;      0;     50;      1;      1;      0.3;];  % starting model
+modelInput.cdmn.step  = [    10;     10;     10;     1;      1;      1;     10;    0.1;    0.1;      0.1;];  % initial maximium step size
+modelInput.cdmn.lower = [  -100;   -100;  -1220;     0;    -20;      0;     10;    0.2;    0.2;     1e-3;];  % lower bounds on m
+modelInput.cdmn.upper = [   100;    100;  -1020;    20;      0;      0;    100;      5;      5;      1e0;];  % upper bounds on m
 
 
 

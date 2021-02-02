@@ -92,19 +92,19 @@ modelInput.freeSurfaceHeight = 1300;		% Minimum height of observations in m a.s.
 % Compound Dislocation Model (Nikhoo) 'C'
 % Fix all parameters with values from the Iwo2017pre/invert_1_2_C by setting start/lower/upper to the same value
 % except for the opening, which is bounded by the 95% confidence intervals assuming a constant opening rate.
-%                             X       Y      Z    omegaX  omegaY  omegaZ   ax      ay      az     opening
-modelInput.cdmn.start = [  15.2;   -4.3;  -1181;   5.4;     -8;    0.3;  56.5;   70.2;   62.5;     0.19;];  % starting model
-modelInput.cdmn.step  = [   0.1;    0.1;      1;   0.1;    0.1;    0.1;   0.1;    0.1;    0.1;     0.02;];  % initial maximium step size
-modelInput.cdmn.lower = [  15.2;   -4.3;  -1181;   5.4;     -8;    0.3;  56.5;   70.2;   62.5;     0.16;];  % lower bounds on m
-modelInput.cdmn.upper = [  15.2;   -4.3;  -1181;   5.4;     -8;    0.3;  56.5;   70.2;   62.5;     0.23;];  % upper bounds on m
+%                             X       Y      Z    omegaX  omegaY  omegaZ    aX    aY/aX   aZ/aX    opening
+modelInput.cdmn.start = [  15.4;   -3.0;  -1181;   4.7;     -8;    0.4;   57.9;    1.2;    1.1;     0.19;];  % starting model
+modelInput.cdmn.step  = [   0.1;    0.1;    0.1;   0.1;    0.1;    0.1;    0.1;    0.1;    0.1;     0.02;];  % initial maximium step size
+modelInput.cdmn.lower = [  15.4;   -3.0;  -1181;   4.7;     -8;    0.4;   57.9;    1.2;    1.1;     0.16;];  % lower bounds on m
+modelInput.cdmn.upper = [  15.4;   -3.0;  -1181;   4.7;     -8;    0.4;   57.9;    1.2;    1.1;     0.23;];  % upper bounds on m
 
 
 % 2nd Compound Dislocation Model (Nikhoo) 'C2'
-%                             X       Y      Z    omegaX  omegaY  omegaZ   ax      ay      az     opening
-modelInput.cdm2.start = [     0;      0;   -900;     0;      0;      0;   500;    500;    200;      0.3;];  % starting model
-modelInput.cdm2.step  = [    10;     10;     10;   0.1;    0.1;    0.1;    10;     10;     10;      0.1;];  % initial maximium step size
-modelInput.cdm2.lower = [  -200;   -250;  -1000;     0;      0;      0;   200;     50;     50;     1e-2;];  % lower bounds on m
-modelInput.cdm2.upper = [   200;    200;   -600;     0;      0;      0;   800;    800;    250;     5e-1;];  % upper bounds on m
+%                             X       Y      Z    omegaX  omegaY  omegaZ    aX     aY/aX   aZ/aX    opening
+modelInput.cdm2.start = [     0;      0;   -950;     0;      0;      0;    400;    0.5;    0.5;      0.3;];  % starting model
+modelInput.cdm2.step  = [    10;     10;     10;   0.1;    0.1;    0.1;     10;    0.1;    0.1;      0.1;];  % initial maximium step size
+modelInput.cdm2.lower = [  -200;   -250;  -1050;     0;      0;      0;    250;    0.1;    0.1;     1e-2;];  % lower bounds on m
+modelInput.cdm2.upper = [   200;    200;   -850;     0;      0;      0;    600;      2;      2;     5e-1;];  % upper bounds on m
 
 
 

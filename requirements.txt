@@ -1,3 +1,4 @@
+geoidheight
 gmt5
 numpy
 matplotlib

@@ -6,6 +6,7 @@ gmt set FONT_ANNOT_PRIMARY 12p
 gmt set FORMAT_GEO_MAP ddd.xF
 gmt set MAP_FRAME_TYPE inside
 gmt set MAP_FRAME_PEN thick,black
+gmt set MAP_TICK_PEN thin,black
 
 FILE='dem_km.grd'
 OUTFILE='dem.ps'
@@ -17,20 +18,21 @@ gmt makecpt -Cwiki-2.0 -T-0.650/1.850/0.01 -V > topo.cpt
 gmt grdgradient $FILE -Nt -A0 -fg -Gtopo_i.nc
 
 #gmt grdimage $FILE -R130.72/130.99/31.84/32.06 -JM5i -BwEsN -B0.1 \
-gmt grdimage $FILE -R130.78/130.95/31.87/31.98 -JM5i -BwEsN -B0.1 \
+gmt grdimage $FILE -R130.78/130.95/31.87/31.98 -JM3i -BwEsN -B0.1 \
     -Ctopo.cpt -Itopo_i.nc -P -V -K > $OUTFILE
-gmt pscoast -R -J -LjBR+c31.9+o1.8i/0.3i+w3k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
+#gmt pscoast -R -J -LjBR+c31.9+o1.8i/0.3i+w3k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
+#gmt pscoast -R -J -LjBR+c31.9+v+o1.8i/0.3i+w3k+l+f -W -V -O -K >> $OUTFILE        #scale-bar
 
 gmt set MAP_FRAME_TYPE plain
-gmt psscale -R -J -DjTR+w1.0i/0.1i+v+o0.5i/0.3i -Ctopo.cpt -By1+lkm \
+gmt psscale -R -J -DjBL+w1.0i/0.1i+v+o0.2i/0.2i -Ctopo.cpt -By1+lkm \
     -Bx0.5 -G0.3/1.85 -V -O -K >> $OUTFILE                                      #color-map
 
 
 ################### Bounding box of Fig. 2 - ALOS-1/2 observations ##############
 LON0=130.843
-LON1=130.909
-LAT0=31.893
-LAT1=31.958
+LON1=130.900
+LAT0=31.895
+LAT1=31.955
 
 gmt psxy <<END -R -J -W0.5,black,dashed -V -O -K >> $OUTFILE
 $LON0   $LAT1
@@ -57,7 +59,7 @@ END
 
 
 ################### Magma Source ###################
-gmt psxy <<END -R -J -Sc1 -W5,black,3:2p -V -O -K >> $OUTFILE
+gmt psxy <<END -R -J -Sc0.7 -W4,black,3:2p -V -O -K >> $OUTFILE
 130.831     31.942
 END
 
