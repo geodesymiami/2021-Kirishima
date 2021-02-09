@@ -4,13 +4,22 @@ mintpy.reference.lalo                   = 31.916, 130.850  #31.895, 130.90  #31.
 mintpy.network.coherenceBased           = yes
 mintpy.network.keepMinSpanTree          = no
 mintpy.network.minCoherence             = 0.8
-mintpy.network.endDate                  = 20171011
 
 mintpy.networkInversion.minTempCoh      = 0.8
 mintpy.networkInversion.shadowMask      = no
 mintpy.troposphericDelay.weatherModel   = ERA5
 mintpy.residualRMS.cutoff               = 2
 mintpy.deramp                           = linear
+mintpy.save.hdfeos5                     = yes
+mintpy.save.hdfeos5.subset              = yes
+
+##-----RUN 1 - Time-series of the whole time period
+mintpy.network.endDate                  = no
+mintpy.velocity.startDate               = 20150101  #to ensure similar time spanning between asc/desc displacement from velocity
+mintpy.velocity.endDate                 = no        #start date of the 2017 eruption
+
+##-----RUN 2 - Displacement estimation of time periods of interest
+mintpy.network.endDate                  = 20171011
 mintpy.velocity.startDate               = 20150101  #to ensure similar time spanning between asc/desc displacement from velocity
 mintpy.velocity.endDate                 = 20171011  #start date of the 2017 eruption
 

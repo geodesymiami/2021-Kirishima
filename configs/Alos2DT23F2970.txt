@@ -13,6 +13,7 @@ isce.applyWaterMask     = yes
 
 
 ##------------------------------- mintpy OPTIONS -------------------------------##
+ORBIT_DIRECTION = DESCENDING
 ## load_data.py -H to check more details and example inputs.
 mintpy.load.processor        = isce
 ##---------for ISCE only:
@@ -31,18 +32,3 @@ mintpy.load.azAngleFile      = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/los.rdr
 mintpy.load.shadowMaskFile   = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/shadowMask.rdr
 mintpy.load.waterMaskFile    = ${SCRATCHDIR}/Alos2DT23F2970/geom_master/waterMask.rdr
 mintpy.load.bperpFile        = None
-
-#mintpy.reference.lalo    	= 31.73, 131.07
-mintpy.network.coherenceBased   = yes
-mintpy.network.keepMinSpanTree  = no
-mintpy.network.minCoherence     = 0.6
-mintpy.troposphericDelay.weatherModel = ERA5
-mintpy.deramp	                = quadratic
-
-
-##------------------------------- Extra Metadata -------------------------##
-ORBIT_DIRECTION = DESCENDING
-trackNumber     = 23
-first_frame     = 2970
-last_frame      = 2970
-

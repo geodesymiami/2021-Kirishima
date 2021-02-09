@@ -7,11 +7,11 @@
 # Author: Zhang Yunjun, 2019-05-18
 
 # setup input/output directories
-inputs_dir_src=$HOME'/insarlab/Kirishima/AlosAT424F620_630/mintpy/inputs'        #input dir
-inputs_dir_dst=$HOME'/insarlab/Kirishima/ShinmoeAlosAT424/mintpy/inputs'  #output dir
+inputs_dir_src=$HOME'/insarlab/Kirishima/AlosDT73F2970_2980/mintpy/inputs'        #input dir
+inputs_dir_dst=$HOME'/insarlab/Kirishima/KirishimaAlosDT73/mintpy/inputs'  #output dir
 
 # setup AOI
-SNWE="31.88 31.94 130.85 130.91"
+SNWE="31.88 31.98 130.82 130.92"
 step="0.000277778"   #degrees
 # degrees --> meters on equator
 # 0.000925926 --> 100 m

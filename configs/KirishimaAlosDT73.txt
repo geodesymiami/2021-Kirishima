@@ -5,13 +5,22 @@ mintpy.network.coherenceBased           = yes
 mintpy.network.keepMinSpanTree          = no
 mintpy.network.minCoherence             = 0.7
 mintpy.network.aoiLALO                  = 31.88:31.94,130.85:130.91
-mintpy.network.endDate                  = 20110119  # magmatic events start
 
 mintpy.networkInversion.minTempCoh      = 0.8
 mintpy.networkInversion.shadowMask      = yes
 mintpy.troposphericDelay.weatherModel   = ERA5
 mintpy.residualRMS.cutoff               = 1
 mintpy.deramp                           = linear
+mintpy.save.hdfeos5                     = yes
+mintpy.save.hdfeos5.subset              = yes
+
+##-----RUN 1 - Time-series of the whole time period
+mintpy.network.endDate                  = no        # magmatic events start
+mintpy.velocity.startDate               = no        # phreatic events start
+mintpy.velocity.endDate                 = no        # phreatic events end
+
+##-----RUN 2 - Displacement estimation of time periods of interest
+mintpy.network.endDate                  = 20110119  # magmatic events start
 mintpy.velocity.startDate               = 20080822  # phreatic events start
 mintpy.velocity.endDate                 = 20100710  # phreatic events end
 

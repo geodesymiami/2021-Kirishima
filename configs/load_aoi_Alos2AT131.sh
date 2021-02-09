@@ -7,8 +7,8 @@
 # Author: Zhang Yunjun, 2019-05-18
 
 # setup input/output directories
-inputs_dir_src=$HOME'/insarlab/Kirishima/Alos2AT131F620/mintpy/inputs'      #input dir
-inputs_dir_dst=$HOME'/insarlab/Kirishima/KirishimaAlos2AT131/mintpy/inputs'  #output dir
+inputs_dir_src=$HOME'/data/Kirishima/Alos2AT131F620/mintpy/inputs'      #input dir
+inputs_dir_dst=$HOME'/data/Kirishima/KirishimaAlos2AT131/mintpy/inputs'  #output dir
 
 # setup AOI
 SNWE="31.88 31.98 130.82 130.92"

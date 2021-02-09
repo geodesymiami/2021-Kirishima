@@ -1,0 +1,37 @@
+# vim: set filetype=cfg:
+##------------------------------- ISCE/stripmapStack OPTIONS ------------------##
+isce.processor          = stripmapStack  #[stripmapStack, topsStack]
+isce.ALOS.fbd2fbs       = yes
+isce.demSNWE            = 31, 33, 130, 132  #[S, N, W, E] in degree
+isce.demFile            = ${SCRATCHDIR}/AlosAT424F620_630/DEM/gsi10m.dem.wgs84
+isce.azimuthLooks       = 10
+isce.rangeLooks         = 4
+isce.maxTempBaseline    = 1800
+isce.maxPerpBaseline    = 1800
+isce.masterDate         = 20080212
+isce.unwrapMethod       = snaphu
+isce.filtStrength       = 0.8
+isce.applyWaterMask     = yes
+
+
+##------------------------------- mintpy OPTIONS -------------------------------##
+ORBIT_DIRECTION = ASCENDING
+## load_data.py -H to check more details and example inputs.
+mintpy.load.processor        = isce
+##---------for ISCE only:
+mintpy.load.metaFile         = ${KIRISHIMA_DIR}/AlosAT424F620_630/referenceShelve/data.dat
+mintpy.load.baselineDir      = ${KIRISHIMA_DIR}/AlosAT424F620_630/baselines
+##---------interferogram datasets:
+mintpy.load.unwFile          = ${KIRISHIMA_DIR}/AlosAT424F620_630/Igrams/*/filt_*.unw
+mintpy.load.corFile          = ${KIRISHIMA_DIR}/AlosAT424F620_630/Igrams/*/filt_*.cor
+mintpy.load.connCompFile     = ${KIRISHIMA_DIR}/AlosAT424F620_630/Igrams/*/filt_*.unw.conncomp
+##---------geometry datasets:
+mintpy.load.demFile          = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/hgt.rdr
+mintpy.load.lookupYFile      = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/lat.rdr
+mintpy.load.lookupXFile      = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/lon.rdr
+mintpy.load.incAngleFile     = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/los.rdr
+mintpy.load.azAngleFile      = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/los.rdr
+mintpy.load.shadowMaskFile   = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/shadowMask.rdr
+mintpy.load.waterMaskFile    = ${KIRISHIMA_DIR}/AlosAT424F620_630/geom_reference/waterMask.rdr
+
+mintpy.reference.lalo    = 31.73, 131.07
