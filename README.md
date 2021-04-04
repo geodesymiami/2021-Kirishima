@@ -1,16 +1,16 @@
 ## Jupyter Notebooks for: ##
 
-Yunjun, Z., F. Amelung, Y. Aoki, (2021), Imaging the Hydrothermal System of Kirishima Volcanic Complex, Japan with ALOS-1/2 InSAR Time Series, _Geophys. Res. Lett._, doi:[10.1002/essoar.10506213.1](https://doi.org/10.1002/essoar.10506213.1) [submitted].
+Yunjun, Z., F. Amelung, Y. Aoki, (2021), Imaging the Hydrothermal System of Kirishima Volcanic Complex, Japan with L-band InSAR Time Series, _Geophys. Res. Lett._, doi:[10.1002/essoar.10506213.1](https://doi.org/10.1002/essoar.10506213.1) [submitted].
 
 ### Data ###
 
 + InSAR displacement products:
-   - Time-series, velocities and selected interferograms for Kirishima, Japan from ALOS-1/2: [Zenodo](https://zenodo.org/record/4495798).
+   - Time-series, velocities and selected interferograms for Kirishima, Japan from ALOS-1/2: [Zenodo](https://zenodo.org/record/4661725).
    - Stacks of interferograms for southern Kyushu, Japan from ALOS-1: [Zenodo](https://zenodo.org/record/4499238).
    - Stacks of interferograms for southern Kyushu, Japan from ALOS-2: [Zenodo](https://zenodo.org/record/4499208).
    - Configurations for InSAR data processing with ISCE-2 and MintPy: [Link](./configs)
 + Geodetic modeling:
-   - Model results from GBIS: [Zenodo](https://zenodo.org/record/4495798).
+   - Model results from GBIS: [Zenodo](https://zenodo.org/record/4661725).
    - Configurations for GBIS: [Link](./model)
 
 ### Figures ([nbviewer](https://nbviewer.jupyter.org/github/geodesymiami/Yunjun_et_al-2021-Kirishima)) ###
