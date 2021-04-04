@@ -25,7 +25,7 @@ geo.boundingBox = [130.832; 31.96; 130.87; 31.935];  % Coordinates in degrees of
 
 insarID = 1;                            % InSAR dataset unique identifier - ALOS2 asc track
 
-insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlos2AT131_20171219_20190702.mat'; % Path to data file
+insar{insarID}.dataPath = '/Users/yunjunz/Papers/2021_Kirishima/figs_src/model/data/KirishimaAlos2AT131_20171219_20190702.mat'; % Path to data file
 
 insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
 
@@ -53,7 +53,7 @@ insar{insarID}.gridStep = 600;          % grid step in m
 
 insarID = 2;                            % InSAR dataset unique identifier - ALOS2 desc track
 
-insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlos2DT23_20171211_20190819.mat'; % Path to data file
+insar{insarID}.dataPath = '/Users/yunjunz/Papers/2021_Kirishima/figs_src/model/data/KirishimaAlos2DT23_20171211_20190819.mat'; % Path to data file
 
 insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
 
@@ -104,22 +104,5 @@ modelInput.cdmn.upper = [  15.4;   -3.0;  -1181;   4.7;     -8;    0.4;   57.9; 
 modelInput.cdm2.start = [     0;      0;   -950;     0;      0;      0;    400;    0.5;    0.5;      0.3;];  % starting model
 modelInput.cdm2.step  = [    10;     10;     10;   0.1;    0.1;    0.1;     10;    0.1;    0.1;      0.1;];  % initial maximium step size
 modelInput.cdm2.lower = [  -200;   -250;  -1050;     0;      0;      0;    250;    0.1;    0.1;     1e-2;];  % lower bounds on m
-modelInput.cdm2.upper = [   200;    200;   -850;     0;      0;      0;    600;      2;      2;     5e-1;];  % upper bounds on m
+modelInput.cdm2.upper = [   200;    200;   -850;     0;      0;      0;    600;    2.0;    2.0;     5e-1;];  % upper bounds on m
 
-
-
-
-
-% Mogi 'M'
-%                             X       Y      Z      DV
-modelInput.mogi.start = [     0;      0;    200;   1e5; ];      % starting model
-modelInput.mogi.step =  [   100;    100;    100;   1e4; ];      % initial maximum step size
-modelInput.mogi.lower = [  -500;   -500;      0;   1e-3;];      % lower bounds on m
-modelInput.mogi.upper = [   500;    500;   1000;   1e7; ];      % upper bounds on m
-
-% McTigue 'T'
-%                                X       Y      Z     R   DP/mu
-modelInput.mctigue.start = [     0;      0; -1200;   50;  2e-2; ];  % starting model
-modelInput.mctigue.step =  [    50;     50;    50;   10;  2e-2; ];  % initial maximum step size
-modelInput.mctigue.lower = [  -200;   -200; -1250;   10;  1e-4; ];  % lower bounds on m
-modelInput.mctigue.upper = [   200;    200; -1000;  100;  5e-1; ];  % upper bounds on m

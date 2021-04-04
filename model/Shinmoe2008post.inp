@@ -25,7 +25,7 @@ geo.boundingBox = [130.85; 31.94; 130.91; 31.88];  % Coordinates in degrees of u
 
 insarID = 1;                            % InSAR dataset unique identifier - ALOS1 asc track
 
-insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlosAT424_20080929_20100705.mat'; % Path to data file
+insar{insarID}.dataPath = '/Users/yunjunz/Papers/2021_Kirishima/figs_src/model/data/KirishimaAlosAT424_20080929_20100705.mat'; % Path to data file
 
 insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
 
@@ -53,7 +53,7 @@ insar{insarID}.gridStep = 750;          % grid step in m
 
 insarID = 2;                            % InSAR dataset unique identifier - ALOS1 desc track
 
-insar{insarID}.dataPath = '/Users/yunjunz/data/Kirishima/Model/data/KirishimaAlosDT73_20081012_20100302.mat'; % Path to data file
+insar{insarID}.dataPath = '/Users/yunjunz/Papers/2021_Kirishima/figs_src/model/data/KirishimaAlosDT73_20081012_20100302.mat'; % Path to data file
 
 insar{insarID}.wavelength = 0.236;      % Wavelength in m (e.g., Envisat/ERS/Sentinel: 0.056; CSK/TSX/TDX: 0.031)
 
