@@ -1,6 +1,6 @@
 ## Jupyter Notebooks for: ##
 
-Yunjun, Z., F. Amelung, Y. Aoki, (2021), Imaging the Hydrothermal System of Kirishima Volcanic Complex, Japan with L-band InSAR Time Series, _Geophys. Res. Lett._, doi:[10.1002/essoar.10506213.1](https://doi.org/10.1002/essoar.10506213.1) [submitted].
+Yunjun, Z., Amelung, F., & Aoki, Y. (2021), Imaging the hydrothermal system of Kirishima volcanic complex with L-band InSAR time series, _Geophysical Research Letters, 48_(11), e2021GL092879. doi:[10.1029/2021GL092879](https://doi.org/10.1029/2021GL092879)
 
 ### Data ###
 
