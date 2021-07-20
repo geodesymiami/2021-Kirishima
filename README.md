@@ -15,6 +15,8 @@ Yunjun, Z., Amelung, F., & Aoki, Y. (2021), Imaging the hydrothermal system of K
 
 ### Figures ([nbviewer](https://nbviewer.jupyter.org/github/geodesymiami/Yunjun_et_al-2021-Kirishima)) ###
 
+NOTE: This notebook is based on the released version of MintPy-1.3 and NOT maintained for future development.
+
 + Fig. 1 - Geophysical observations at Kirishima during 2008-2019.
    - [Fig. 1a-c](https://nbviewer.jupyter.org/github/geodesymiami/Yunjun_etal-2021-Kirishima/blob/main/Fig1_geo_setting.ipynb) - Geological setting.
    - [Fig. 2d-f](https://nbviewer.jupyter.org/github/geodesymiami/Yunjun_etal-2021-Kirishima/blob/main/Fig1_obs_maps.ipynb) - Quasi-vertical displacement maps from InSAR.
